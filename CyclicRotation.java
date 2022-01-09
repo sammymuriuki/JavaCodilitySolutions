@@ -2,6 +2,10 @@ class CyclicRotation{
     public int[] solution(int[] A, int K) {
         for(int i=0; i<K; i++){
             int lenA = A.length;
+            if(lenA == 0){
+                return A;
+            }
+
             int lastElment = A[lenA-1];
             for(int j=lenA-1; j>0; j--){
                 A[j] = A[j-1];
