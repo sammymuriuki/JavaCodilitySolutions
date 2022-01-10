@@ -27,13 +27,12 @@ Write an efficient algorithm for the following assumptions:
 
 
 */
-import java.util.Arrays;
 public class PermMissingElem {
     public static int solution(int[] A){
-	    Arrays.sort(A);
-	    int sum = Arrays.stream(A).sum();
-	    int lenA= A.length;
-	    int sumofn = ((lenA+1)*(lenA+2))/2;
-	    return sumofn-sum;
+        int n=A.length;
+        int sum=((n+1)*(n+2))/2;
+        for(int i=0;i<n;i++)
+          sum-=A[i];
+        return sum;
 	}
 }
